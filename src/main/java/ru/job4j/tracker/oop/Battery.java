@@ -1,4 +1,4 @@
-package ru.job4j.oop;
+package ru.job4j.tracker.oop;
 
 public class Battery {
 
@@ -7,7 +7,6 @@ public class Battery {
     public Battery(int load) {
         this.load = load;
     }
-
 
     public void exchange(Battery another) {
         this.load = this.load - another.load;
