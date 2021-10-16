@@ -5,6 +5,7 @@ public class Triangle {
     private Point second;
     private Point third;
 
+
     public Triangle(Point ap, Point bp, Point cp) {
         this.first = ap;
         this.second = bp;
@@ -26,7 +27,7 @@ public class Triangle {
         double bc = second.distance(third);
         if (this.exist(ab, ac, bc) == true) {
             double p = semiPerimeter(ab, ac, bc);
-            Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
+            rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;
     }
