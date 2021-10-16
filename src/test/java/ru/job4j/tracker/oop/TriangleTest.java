@@ -1,8 +1,10 @@
 package ru.job4j.tracker.oop;
 
-import org.junit.Test;
 import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;
+
+import junit.framework.Assert;
+import org.junit.Test;
 
 public class TriangleTest {
 
@@ -14,5 +16,17 @@ public class TriangleTest {
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         assertThat(rsl, closeTo(8, 0.001));
+    }
+
+    @Test
+    public void areaNotExist() {
+        double expected = -1;
+        Point a = new Point(0, 0);
+        Point b = new Point(1, 0);
+        Point c = new Point(12, 12);
+        Triangle triangle = new Triangle(a, b, c);
+        double result = triangle.area();
+        Assert.assertEquals(result, expected);
+
     }
 }
