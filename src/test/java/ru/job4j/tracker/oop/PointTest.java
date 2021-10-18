@@ -34,12 +34,21 @@ public class PointTest {
     }
 
     @Test
-    public void when22to00then2() {
+    public void when35to11then2() {
         double expected = 2;
         Point first = new Point(3, 1);
         Point second = new Point(5, 1);
         double out = first.distance(second);
         Assert.assertEquals(expected, out, 0.01);
+    }
+
+    @Test
+    public void when020to035then6() {
+        double expected = 5;
+        Point first = new Point(0, 2, 0);
+        Point second = new Point(0, 3, 5);
+        double out = first.distance3d(second);
+        Assert.assertEquals(expected, out, 1);
     }
 
 }
