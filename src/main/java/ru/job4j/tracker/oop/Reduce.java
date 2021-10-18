@@ -8,8 +8,8 @@ public class Reduce {
     }
 
     public void print() {
-        for (int index = 0; index < this.array.length; index++) {
-            System.out.println(this.array[index]);
+        for (int index = 0; index < array.length; index++) {
+            System.out.println(array[index]);
         }
     }
 
