@@ -43,12 +43,12 @@ public class PointTest {
     }
 
     @Test
-    public void when020to035then6() {
-        double expected = 5;
+    public void when020to035then5Dot1() {
+        double expected = 5.1;
         Point first = new Point(0, 2, 0);
         Point second = new Point(0, 3, 5);
         double out = first.distance3d(second);
-        Assert.assertEquals(expected, out, 1);
+        Assert.assertEquals(expected, out, 0.01);
     }
 
 }
