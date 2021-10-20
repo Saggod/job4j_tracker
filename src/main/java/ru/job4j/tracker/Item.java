@@ -23,20 +23,6 @@ public class Item {
         this.created = created;
     }
 
-    public void print() {
-        System.out.println("id = " + id);
-        System.out.println("name = " + name);
-        System.out.println();
-    }
-
-    public static void main(String[] args) {
-        Item first = new Item();
-        first.print();
-        Item second = new Item(1);
-        second.print();
-        Item thrid = new Item(2, "I'm constructor");
-        thrid.print();
-    }
 
     public int getId() {
         return id;
