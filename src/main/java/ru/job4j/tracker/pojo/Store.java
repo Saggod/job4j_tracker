@@ -9,7 +9,7 @@ public class Store {
         prods[0] = milk;
         prods[1] = bread;
         prods[2] = egg;
-        for(int index = 0; index < prods.length; index++) {
+        for (int index = 0; index < prods.length; index++) {
             Product pr = prods[index];
             System.out.println(pr.getName() + " - " + pr.getCount());
         }

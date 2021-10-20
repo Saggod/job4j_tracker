@@ -1,4 +1,4 @@
-package ru.job4j.tracker.Clinic;
+package ru.job4j.tracker.clinic;
 
 public class Doctor extends Profession {
 
@@ -10,6 +10,5 @@ public class Doctor extends Profession {
         heal(pacient);
         return null;
     }
-
 
 }

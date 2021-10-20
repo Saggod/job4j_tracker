@@ -1,4 +1,4 @@
-package ru.job4j.tracker.Clinic;
+package ru.job4j.tracker.clinic;
 
 public class Profession {
 
@@ -13,8 +13,6 @@ public class Profession {
         this.education = education;
         this.birthday = birthday;
     }
-
-
 
     public String getName() {
         return name;

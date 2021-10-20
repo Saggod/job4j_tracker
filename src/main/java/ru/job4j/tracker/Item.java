@@ -7,10 +7,10 @@ public class Item {
     private String name;
     private LocalDateTime created = LocalDateTime.now();
 
-    public Item(){
+    public Item() {
     }
 
-    public Item(int id){
+    public Item(int id) {
         this.id = id;
     }
 

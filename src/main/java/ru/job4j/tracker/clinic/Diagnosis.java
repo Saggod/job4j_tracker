@@ -1,4 +1,4 @@
-package ru.job4j.tracker.Clinic;
+package ru.job4j.tracker.clinic;
 
 public class Diagnosis extends Doctor {
     private String diagnos;
@@ -7,10 +7,8 @@ public class Diagnosis extends Doctor {
         super(name, surname, education, birthday);
     }
 
-
     public String getDiagnos() {
         return diagnos;
     }
-
 
 }

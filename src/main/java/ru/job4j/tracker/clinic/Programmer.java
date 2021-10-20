@@ -1,4 +1,4 @@
-package ru.job4j.tracker.Clinic;
+package ru.job4j.tracker.clinic;
 
 public class Programmer extends Engineer {
     public Programmer(String name, String surname, String education, String birthday) {
