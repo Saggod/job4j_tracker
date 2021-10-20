@@ -12,14 +12,12 @@ public class Library {
         books[1] = cookie;
         books[2] = algoritm;
         books[3] = programmers;
-        for (int index = 0; index < books.length; index++) {
-            Book bk = books[index];
+        for (Book bk : books) {
             System.out.println(bk.getName() + " - " + bk.getCount());
         }
         Book code = new Book("Clean code", 400);
         books[0] = code;
-        for (int index = 0; index < books.length; index++) {
-            Book bk = books[index];
+        for (Book bk : books) {
             if (("Clean code").equals(bk.getName())) {
                 System.out.println(bk.getName() + " - " + bk.getCount());
             }
