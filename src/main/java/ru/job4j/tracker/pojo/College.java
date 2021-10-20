@@ -10,6 +10,8 @@ public class College {
         student.setGroup("1");
         student.setAdmission(new Date());
 
-        System.out.println("Студент: " + student.getName() + ". Группа: " + student.getGroup() + ". Дата поступления: " + student.getAdmission());
+        System.out.println("Студент: " + student.getName() + ". " + System.lineSeparator()
+                + "Группа: " + student.getGroup() + ". " + System.lineSeparator()
+                + "Дата поступления: " + student.getAdmission() + ".");
     }
 }
