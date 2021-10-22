@@ -5,13 +5,13 @@ public class Tracker {
     private int ids = 1;
     private int size = 0;
 
-    public Item add(Item item) { //добавление заявок
+    public Item add(Item item) {
         item.setId(ids++);
         items[size++] = item;
         return item;
     }
 
-    public Item findById(int id) { //получение заявки по id
+    public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
             Item item = items[index];
@@ -22,14 +22,5 @@ public class Tracker {
         }
         return rsl;
     }
-
-//    public Item[] findByName(String key) { //получение списка по имени
-//
-//    }
-//
-//
-//    public Item[] findAll() { //получение списка всех заявок
-//
-//    }
 
 }
