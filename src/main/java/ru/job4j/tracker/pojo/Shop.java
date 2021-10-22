@@ -3,17 +3,12 @@ package ru.job4j.tracker.pojo;
 public class Shop {
 
     public static int indexOfNull(Product[] products) {
-        int i;
-        for (i = 0; i < products.length; i++) {
+        for (int i = 0; i < products.length; i++) {
             if (products[i] == null) {
-                System.out.println("Пустая ячейка с индексом = " + i);
-                break;
-            } else if (products.length == 1) {
-                i = -1;
-                break;
+                return i;
             }
         }
-        return i;
+        return -1;
     }
 
     public static void main(String[] args) {
