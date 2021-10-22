@@ -8,7 +8,8 @@ public class Dentist extends Doctor {
         super(name, surname, education, birthday);
     }
 
-    public static void  healTooth() {
-
+    public String getThoothNumber() {
+        return thoothNumber;
     }
+
 }
