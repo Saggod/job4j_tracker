@@ -12,5 +12,7 @@ public class StartUI {
         String currentDateTime = oldFormat.format(formatter);
 
         System.out.println("Current date = " + currentDateTime);
+
+        System.out.println(item);
     }
 }
