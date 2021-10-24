@@ -50,12 +50,10 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        for (int index = 0; index < size; index++) {
-            if (indexOf(id) == index) {
-                oldID = id;
-                items[indexOf(id)].setName(item.getName());
-                return true;
-            }
+        oldID = id;
+        if (indexOf(id) > -1) {
+            items[indexOf(id)].setName(item.getName());
+            return true;
         }
         return false;
     }
