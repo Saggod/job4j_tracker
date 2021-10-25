@@ -24,14 +24,11 @@ public class Tracker {
         int count = 0;
         for (int i = 0; i < size; i++) {
             Item name = items[i];
-            boolean eq = name.getName().equals(key);
-            if (eq) {
-                rsl[i] = name;
-                count++;
+            if (name.getName().equals(key)) {
+                rsl[count++] = name;
             }
         }
-        rsl = Arrays.copyOf(rsl, count);
-        return rsl;
+        return Arrays.copyOf(rsl, count);
     }
 
     public Item[] findAll() {
