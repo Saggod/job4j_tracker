@@ -6,7 +6,6 @@ public class Tracker {
     private final Item[] items = new Item[100];
     private int ids = 1;
     private int size = 0;
-    private int oldID;
 
     public Item add(Item item) {
         item.setId(ids++);
@@ -47,12 +46,14 @@ public class Tracker {
     }
 
     public boolean replace(int id, Item item) {
-        oldID = id;
-        boolean rsl = indexOf(id) > -1;
-        if (rsl) {
-            items[indexOf(id)].setName(item.getName());
+        int oldID = id;
+        int index = indexOf(id);
+        if (index != -1) {
+            item.setId(id);
+            items[index] = item;
+            return true;
         }
-        return rsl;
+        return false;
     }
 
     public boolean delete(int id) {
