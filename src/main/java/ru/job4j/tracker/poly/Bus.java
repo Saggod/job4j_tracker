@@ -1,19 +1,13 @@
 package ru.job4j.tracker.poly;
 
-public class Bus implements Transport {
+public class Bus implements Vehicle {
+    @Override
+    public void numberVehicle() {
+        System.out.print(getClass().getSimpleName() + " A 123 AA");
+    }
 
     @Override
     public void move() {
-
-    }
-
-    @Override
-    public void count(int passengers) {
-
-    }
-
-    @Override
-    public int charge(int fuel) {
-        return 0;
+        System.out.println(" Движется по скоростной трассе");
     }
 }
