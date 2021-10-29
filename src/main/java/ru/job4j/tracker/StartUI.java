@@ -107,9 +107,8 @@ public class StartUI {
     public static void main(String[] args) {
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        /*Вызов не статического метода. Необходимо обратиться через объект. */
         new StartUI().init(input, tracker);
-        /* Вызов статического метода. Обращаемся через класс. */
         StartUI.createItem(input, tracker);
     }
+
 }
