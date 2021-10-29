@@ -1,4 +1,5 @@
 package ru.job4j.tracker;
+
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -43,4 +44,5 @@ public class StartUITest {
         Item[] delete = tracker.findAll();
         assertThat(delete.length, is(0));
     }
+
 }
