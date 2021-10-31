@@ -6,6 +6,7 @@ public class Dentist extends Doctor {
 
     public Dentist(String name, String surname, String education, String birthday) {
         super(name, surname, education, birthday);
+        this.thoothNumber = thoothNumber;
     }
 
     public String getThoothNumber() {

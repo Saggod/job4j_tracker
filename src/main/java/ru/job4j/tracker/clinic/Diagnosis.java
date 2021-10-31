@@ -6,10 +6,7 @@ public class Diagnosis extends Doctor {
 
     public Diagnosis(String name, String surname, String education, String birthday) {
         super(name, surname, education, birthday);
-    }
-
-    public Diagnosis() {
-        super();
+        this.diagnos = diagnos;
     }
 
     public String getDiagnos() {
