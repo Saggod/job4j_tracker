@@ -30,7 +30,7 @@ public class StartUI {
                 new DeleteActions(),
                 new FindActionsByID(),
                 new FindActionsByName(),
-                new ExitProgram()
+                new ExitActions()
         };
         new StartUI().init(input, tracker, actions);
     }
