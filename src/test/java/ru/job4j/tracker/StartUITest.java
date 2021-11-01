@@ -2,6 +2,10 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -30,7 +34,7 @@ public class StartUITest {
         Item item = tracker.add(new Item("Replaced item"));
         String replacedName = "New item name";
         Input in = new StubInput(
-                new String[]{"0", "1", replacedName, "1"}
+                new String[]{"0", String.valueOf(item.getId()), replacedName, "1"}
         );
         UserAction[] actions = {
                 new ReplaceActions(out),
@@ -68,9 +72,64 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator()
+                "Menu:" + System.lineSeparator()
                         + "0. Exit" + System.lineSeparator()
-                        + "Пользователь выбрал: 0" + System.lineSeparator()
         ));
     }
+
+    @Test
+    public void whenReplaceItemTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("test1"));
+        String replaceName = "New Test Name";
+        Input in = new StubInput(
+                new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new ReplaceActions(out),
+                new ExitActions(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Edit item" + ln
+                        + "1. Exit" + ln
+                        + "=== Edit item ===" + ln
+                        + "Заявка изменена успешно." + ln
+                        + "Menu:" + ln
+                        + "0. Edit item" + ln
+                        + "1. Exit" + ln
+        ));
+    }
+
+    @Test
+    public void whenFindAllActionsTestOutputIsSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("Test"));
+        String date = new SimpleDateFormat("dd-MMMM-EEEE-yyyy HH:mm:ss")
+                .format(Calendar.getInstance().getTime());
+        Input in = new StubInput(
+                new String[]{"0", "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new ShowAllActions(out),
+                new ExitActions(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit" + ln
+                        + "=== Show all items ===" + ln
+                        + "Item{id=1, name='Test', created=" + date + "}" + ln
+                        + "Menu:" + ln
+                        + "0. Show all items" + ln
+                        + "1. Exit" + ln
+        ));
+    }
+
 }
