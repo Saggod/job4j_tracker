@@ -21,5 +21,4 @@ public class CreateAction implements UserAction {
         out.println("Добавлена заявка: " + item);
         return true;
     }
-
 }
