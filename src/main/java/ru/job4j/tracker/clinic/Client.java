@@ -4,7 +4,6 @@ public class Client  {
 
     private String clientProblem;
 
-
     public String getClientProblem() {
         return clientProblem;
     }
