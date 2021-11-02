@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -157,29 +158,29 @@ public class StartUITest {
         ));
     }
 
-        @Test
-        public void whenFindActionsByIDTestOutputSuccessfully() {
-            Output out = new StubOutput();
-            Tracker tracker = new Tracker();
-            Item one = tracker.add(new Item("Test"));
-            Input in = new StubInput(
-                    new String[]{"0", String.valueOf(one.getId()), "1"}
-            );
-            UserAction[] actions = new UserAction[]{
-                    new FindActionsByID(out),
-                    new ExitActions(out)
-            };
-            new StartUI(out).init(in, tracker, actions);
-            String ln = System.lineSeparator();
-            assertThat(out.toString(), is(
-                    "Menu:" + ln
-                            + "0. Find item by id" + ln
-                            + "1. Exit" + ln
-                            + "=== Find item by id ===" + ln
-                            + "Item{id=1, name='Test', created=" + date + "}" + ln
-                            + "Menu:" + ln
-                            + "0. Find item by id" + ln
-                            + "1. Exit" + ln
-            ));
-        }
+    @Test
+    public void whenFindActionsByIDTestOutputSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("Test"));
+        Input in = new StubInput(
+                new String[]{"0", String.valueOf(one.getId()), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindActionsByID(out),
+                new ExitActions(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit" + ln
+                        + "=== Find item by id ===" + ln
+                        + "Item{id=1, name='Test', created=" + date + "}" + ln
+                        + "Menu:" + ln
+                        + "0. Find item by id" + ln
+                        + "1. Exit" + ln
+        ));
+    }
 }
