@@ -6,11 +6,14 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 
+import static org.hamcrest.Matchers.iterableWithSize;
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
+    String date = new SimpleDateFormat("dd-MMMM-EEEE-yyyy HH:mm:ss")
+            .format(Calendar.getInstance().getTime());
 
     @Test
     public void whenCreateItem() {
@@ -109,8 +112,7 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("Test"));
-        String date = new SimpleDateFormat("dd-MMMM-EEEE-yyyy HH:mm:ss")
-                .format(Calendar.getInstance().getTime());
+
         Input in = new StubInput(
                 new String[]{"0", "1"}
         );
@@ -131,4 +133,56 @@ public class StartUITest {
                         + "1. Exit" + ln
         ));
     }
+
+    @Test
+    public void whenFindActionsByNameTestOutputSuccessfully() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item one = tracker.add(new Item("Test"));
+        Input in = new StubInput(
+                new String[]{"0", one.getName(), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new FindActionsByName(out),
+                new ExitActions(out)
+        };
+        new StartUI(out).init(in, tracker, actions);
+        String ln = System.lineSeparator();
+        assertThat(out.toString(), is(
+                "Menu:" + ln
+                        + "0. Find items by name" + ln
+                        + "1. Exit" + ln
+                        + "=== Find items by name ===" + ln
+                        + "Item{id=1, name='Test', created=" + date + "}" + ln
+                        + "Menu:" + ln
+                        + "0. Find items by name" + ln
+                        + "1. Exit" + ln
+        ));
+    }
+
+        @Test
+        public void whenFindActionsByIDTestOutputSuccessfully() {
+            Output out = new StubOutput();
+            Tracker tracker = new Tracker();
+            Item one = tracker.add(new Item("Test"));
+            Input in = new StubInput(
+                    new String[]{"0", String.valueOf(one.getId()), "1"}
+            );
+            UserAction[] actions = new UserAction[]{
+                    new FindActionsByID(out),
+                    new ExitActions(out)
+            };
+            new StartUI(out).init(in, tracker, actions);
+            String ln = System.lineSeparator();
+            assertThat(out.toString(), is(
+                    "Menu:" + ln
+                            + "0. Find item by id" + ln
+                            + "1. Exit" + ln
+                            + "=== Find item by id ===" + ln
+                            + "Item{id=1, name='Test', created=" + date + "}" + ln
+                            + "Menu:" + ln
+                            + "0. Find item by id" + ln
+                            + "1. Exit" + ln
+            ));
+        }
 }
