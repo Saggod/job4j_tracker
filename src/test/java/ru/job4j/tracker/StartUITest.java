@@ -9,7 +9,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
-    String date = new SimpleDateFormat("dd-MMMM-EEEE-yyyy HH:mm:ss")
+    private String date = new SimpleDateFormat("dd-MMMM-EEEE-yyyy HH:mm:ss")
             .format(Calendar.getInstance().getTime());
 
     @Test
