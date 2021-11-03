@@ -6,7 +6,7 @@ public class Fact {
         new Fact().calc(-1);
     }
 
-    public int calc(int n) {
+    public static int calc(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("'n' should be = 0 or > 0");
         }
