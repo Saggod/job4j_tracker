@@ -2,16 +2,11 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import static org.hamcrest.Matchers.nullValue;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
-    private String date = new SimpleDateFormat("dd-MMMM-EEEE-yyyy HH:mm:ss")
-            .format(Calendar.getInstance().getTime());
 
     @Test
     public void whenCreateItem() {
@@ -125,7 +120,7 @@ public class StartUITest {
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
                         + "=== Show all items ===" + ln
-                        + "Item{id=1, name='Test', created=" + date + "}" + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
@@ -151,7 +146,7 @@ public class StartUITest {
                         + "0. Find items by name" + ln
                         + "1. Exit" + ln
                         + "=== Find items by name ===" + ln
-                        + "Item{id=1, name='Test', created=" + date + "}" + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find items by name" + ln
                         + "1. Exit" + ln
@@ -177,7 +172,7 @@ public class StartUITest {
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
                         + "=== Find item by id ===" + ln
-                        + "Item{id=1, name='Test', created=" + date + "}" + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find item by id" + ln
                         + "1. Exit" + ln
