@@ -7,7 +7,7 @@ public class FindEl {
             throw new ElementNotFoundException("key cannot be null");
         }
         for (int i = 0; i < value.length; i++) {
-            if (value[i] == key){
+            if (value[i] == key) {
                 System.out.println("index = " + i);
             }
         }
