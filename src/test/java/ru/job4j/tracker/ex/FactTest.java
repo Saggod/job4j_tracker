@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class FactTest {
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = StackOverflowError.class)
     public void whenLessThanZero() {
         Fact.calc(-5);
     }
