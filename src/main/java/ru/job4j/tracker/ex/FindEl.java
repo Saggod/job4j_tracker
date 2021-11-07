@@ -3,9 +3,9 @@ package ru.job4j.tracker.ex;
 public class FindEl {
     public static int indexOf(String[] value, String key) throws ElementNotFoundException {
         int rsl = -1;
-        for (String i : value) {
-            if (i.equals(key)) {
-                return rsl;
+        for (int i = 0; i < value.length; i++) {
+            if (value[i].equals(key)) {
+                return i;
             }
         }
         throw new ElementNotFoundException("Element not exist");
