@@ -42,14 +42,16 @@ public class ValidateInputTest {
 
     @Test
     public void whenValidAllNumbers() {
-        int i = 0;
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[]{"0", "1", "2"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Enter menu::");
-        assertThat(selected, is(i++));
-
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(0));
+        selected = input.askInt("Enter menu:");
+        assertThat(selected, is(1));
+        selected = input.askInt("Enter menu:");
+        assertThat(selected, is(2));
     }
 }
