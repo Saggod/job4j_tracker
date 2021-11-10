@@ -2,7 +2,7 @@ package ru.job4j.tracker.ooa;
 
 public class Airbus {
     final private static int COUNT_ENGINE = 2;
-    private static int count_engine_a380 = 4;
+    private static int countEngineA380 = 4;
 
     private String name;
 
@@ -26,10 +26,9 @@ public class Airbus {
         if (!name.equals("A380")) {
             System.out.println("Количество двигателей равно: " + COUNT_ENGINE);
         } else {
-            System.out.println("Количество двигателей равно: " + count_engine_a380);
+            System.out.println("Количество двигателей равно: " + countEngineA380);
         }
     }
-
 
     @Override
     public String toString() {
