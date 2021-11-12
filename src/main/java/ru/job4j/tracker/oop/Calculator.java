@@ -23,7 +23,6 @@ public class Calculator {
         return sum(a) + multiply(a) + minus(a) + divide(a);
     }
 
-
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
         int result = sum(10);
